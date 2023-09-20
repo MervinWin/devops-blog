@@ -1,0 +1,86 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter pub get
+
+## exception
+
+FileSystemException: FileSystemException: Cannot create link, path = '/media/kenny-winata/Back Up/Information Technology/Mobile Development/my_apps/smart_music_player/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows' (OS Error: Operation not permitted, errno = 1)
+
+```
+#0      _Link.throwIfError (dart:io/link.dart:263:7)
+#1      _Link.createSync (dart:io/link.dart:184:5)
+#2      ForwardingLink.createSync (package:file/src/forwarding/forwarding_link.dart:20:16)
+#3      ForwardingLink.createSync (package:file/src/forwarding/forwarding_link.dart:20:16)
+#4      _createPlatformPluginSymlinks (package:flutter_tools/src/flutter_plugins.dart:1029:12)
+#5      createPluginSymlinks (package:flutter_tools/src/flutter_plugins.dart:964:5)
+#6      refreshPluginsList (package:flutter_tools/src/flutter_plugins.dart:1055:5)
+<asynchronous suspension>
+#7      FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:316:5)
+<asynchronous suspension>
+#8      PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:177:5)
+<asynchronous suspension>
+#9      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1161:27)
+<asynchronous suspension>
+#10     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#11     CommandRunner.runCommand (package:args/command_runner.dart:209:13)
+<asynchronous suspension>
+#12     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:281:9)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:229:5)
+<asynchronous suspension>
+#15     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:62:9)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#17     main (package:flutter_tools/executable.dart:94:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 2.10.3, on Ubuntu 20.04.4 LTS 5.13.0-48-generic, locale id_ID.UTF-8)
+    • Flutter version 2.10.3 at /home/kenny-winata/sdks/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 7e9793dee1 (3 months ago), 2022-03-02 11:23:12 -0600
+    • Engine revision bd539267b4
+    • Dart version 2.16.1
+    • DevTools version 2.9.2
+
+[!] Android toolchain - develop for Android devices (Android SDK version 32.0.0)
+    • Android SDK at /home/kenny-winata/Android/Sdk
+    ✗ cmdline-tools component is missing
+      Run `path/to/sdkmanager --install "cmdline-tools;latest"`
+      See https://developer.android.com/studio/command-line for more details.
+    ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/docs/get-started/install/linux#android-setup for more details.
+
+[✓] Chrome - develop for the web
+    • Chrome at google-chrome
+
+[✓] Android Studio (version 2021.1)
+    • Android Studio at /snap/android-studio/119/android-studio
+    • Flutter plugin version 66.0.1
+    • Dart plugin version 211.7817
+    • Java version OpenJDK Runtime Environment (build 11.0.11+0-b60-7590822)
+
+[✓] VS Code (version 1.68.0)
+    • VS Code at /usr/share/code
+    • Flutter extension version 3.42.0
+
+[✓] Connected device (2 available)
+    • Google Pixel 3 (mobile) • 192.168.56.105:5555 • android-x86    • Android 10 (API 29)
+    • Chrome (web)            • chrome              • web-javascript • Google Chrome 102.0.5005.115
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+! Doctor found issues in 1 category.
+```
